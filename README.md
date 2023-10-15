@@ -58,7 +58,7 @@ Create a `metadata.json` metadata file like this:
 }
 ```
 
-It will generate the metadata into your output file. It will **auto-align**.
+It will generate the metadata into your output file and **auto-align**.
 
 ```js
 // ==UserScript==
