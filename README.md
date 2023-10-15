@@ -35,7 +35,7 @@ export default {
     input: 'src/index.js',
     output: {
         dir: 'output',
-        format: 'cjs'
+        format: 'iife'
     },
     plugins: [
         metadata({
@@ -68,3 +68,34 @@ It will generate the metadata into your output file and **auto-align**.
 // @match   https://example.net/
 // ==/UserScript==
 ```
+
+#### Using with @rollup/plugin-terser
+
+Here's how you can modify your `rollup.config.mjs` file to include the rollup-plugin-terser plugin and preserve 
+the metadata:
+
+```js
+import metadata from "rollup-plugin-userscript-metadata"
+import teaser from "@rollup/plugin-terser"
+
+export default {
+    input: 'src/index.js',
+    output: {
+        file: 'dist/index.min.js',
+        format: 'iife'
+    },
+    plugins: [
+        terser({
+            format: {
+                comments: [
+                    "/\\/\\/ ==UserScript==\\n(?:\\/\\/ @[^\\n]+\\n)*\\/\\/ ==\\/UserScript==/\n/m"
+                ]
+            }
+        }),
+        metadata({
+            metadata: "src/metadata.json"
+        })
+    ]
+};
+```
+
