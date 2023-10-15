@@ -21,7 +21,7 @@ pnpm install --save-dev rollup-plugin-userscript-metadata
 #### yarn
 
 ```shell
-yarn add postcss rollup-plugin-userscript-metadata --dev
+yarn add --dev rollup-plugin-userscript-metadata
 ```
 
 ### Usage
