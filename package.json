@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-userscript-metadata",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A Rollup plugin that enables automatic generation of userscript metadata from JSON.",
   "main": "dist/index.cjs.min.js",
   "module": "dist/index.es.min.js",

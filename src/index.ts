@@ -8,7 +8,7 @@ interface Options {
 export default function metadata(options: Options): Plugin {
     return {
         name: 'rollup-plugin-userscript-metadata',
-        version: "1.0.0",
+        version: "2.0.0",
         async banner() {
             let metadataJson = readFileSync(options.metadata, "utf-8");
             let metadataObject: Map<string, string | string[]> = JSON.parse(metadataJson)
